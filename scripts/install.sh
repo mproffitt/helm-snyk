@@ -4,7 +4,7 @@
 # helm/plugins folder
 set -eou pipefail
 
-latest_version=$(curl -Is "https://github.com/snyk-labs/helm-snyk/releases/latest" | grep -E "^Location:" | rev | cut -d"/" -f1 | rev | tr -d "\r\n")
+latest_version=$(curl -Is "https://github.com/snyk-labs/helm-snyk/releases/latest" | grep -Ei "^Location:" | rev | cut -d"/" -f1 | rev | tr -d "\r\n")
 
 echo "Installing helm-snyk ${latest_version} ..."
 
